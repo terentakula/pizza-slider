@@ -1,32 +1,105 @@
-# React + TypeScript + Vite
+# RitmStyle
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern responsive website for **RitmStyle**, rebuilt from a static HTML/CSS/JavaScript project as a React application.
 
-Currently, two official plugins are available:
+The project keeps the original dark aquatic visual identity while adding a more modern interface, responsive layout, animated interactions, React routing and improved mobile navigation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+**https://terentakula.github.io/RitmStyle/**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+* Responsive layout for desktop, tablet and mobile
+* Modern animated hero section
+* Smooth scroll-based animations
+* Interactive session cards
+* Animated testimonials slider
+* Mobile navigation menu
+* Booking modal with form validation
+* News and blog pages
+* Individual article pages
+* Responsive pricing and contact sections
+* Reduced-motion support
+* GitHub Pages deployment with GitHub Actions
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+* React
+* Vite
+* React Router
+* Motion / `motion/react`
+* CSS3
+* GitHub Actions
+* GitHub Pages
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/terentakula/RitmStyle.git
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the project directory:
+
+```bash
+cd RitmStyle
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Production Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+├── assets/          # Images, icons and other static assets
+├── components/      # Shared UI components
+├── data/            # Sessions, prices, reviews and article content
+├── pages/           # Home, News, Blog and Article pages
+├── App.jsx          # Application routes and layout
+├── main.jsx         # React entry point
+└── styles.css       # Global styles and responsive layout
+```
+
+## Deployment
+
+The project is automatically deployed to GitHub Pages through GitHub Actions after changes are pushed to the `main` branch.
+
+Live version:
+
+**https://terentakula.github.io/RitmStyle/**
+
+## Note
+
+The booking interface is implemented on the frontend. It currently does not send booking data to a backend service.
+
+A backend API, email service, Telegram bot, Formspree or CRM can be connected later for production use.
+
+## Repository
+
+https://github.com/terentakula/RitmStyle

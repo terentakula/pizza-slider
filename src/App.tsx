@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import "./App.css";
 
@@ -9,36 +9,50 @@ const pizzas = [
     id: 0,
     name: "MARGHERITA",
     subtitle: "CLASSIC VIBES. STRAIGHT-UP FLAVOR.",
+    image: pizza,
+    accent: "#ff006f",
   },
   {
     id: 1,
     name: "BURRATA",
     subtitle: "CREAMY. FRESH. AND LOW-KEY FIRE.",
+    image: pizza,
+    accent: "#f2b705",
   },
   {
     id: 2,
     name: "PESTO",
     subtitle: "GREEN, BRIGHT AND FULL OF FLAVOR.",
+    image: pizza,
+    accent: "#73d216",
   },
   {
     id: 3,
     name: "GARLIC",
     subtitle: "BOLD, CRISPY AND SERIOUSLY GOOD.",
+    image: pizza,
+    accent: "#e5d7a1",
   },
   {
     id: 4,
     name: "VEGGIES",
     subtitle: "FRESH COLORS. BIG FLAVOR.",
+    image: pizza,
+    accent: "#ff6b35",
   },
   {
     id: 5,
     name: "SPICY",
     subtitle: "HOT, LOUD AND IMPOSSIBLE TO IGNORE.",
+    image: pizza,
+    accent: "#ff2a2a",
   },
   {
     id: 6,
     name: "TRUFFLE",
     subtitle: "RICH, EARTHY AND A LITTLE EXTRA.",
+    image: pizza,
+    accent: "#a56eff",
   },
 ];
 
@@ -84,7 +98,14 @@ function App() {
   };
 
   return (
-    <main className="hero">
+    <main
+      className="hero"
+      style={
+        {
+          "--accent": pizzas[activeIndex].accent,
+        } as CSSProperties
+      }
+    >
       <header className="header">
         <a className="logo" href="#">
           PIZZA
@@ -310,8 +331,8 @@ function App() {
                   }}
                 >
                   <div className="slice-frame">
-                    <div className="slice-image">
-                      <img src={pizza} alt={item.name} />
+                    <div className={`slice-image slice-image-${item.id}`}>
+                      <img src={item.image} alt={item.name} draggable={false} />
                     </div>
                   </div>
                 </motion.div>
