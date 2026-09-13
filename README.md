@@ -1,105 +1,61 @@
-# RitmStyle
+# Pizza Slider
 
-A modern responsive website for **RitmStyle**, rebuilt from a static HTML/CSS/JavaScript project as a React application.
+Interactive animated pizza carousel built with React, TypeScript and Motion.
 
-The project keeps the original dark aquatic visual identity while adding a more modern interface, responsive layout, animated interactions, React routing and improved mobile navigation.
+The project is based on a motion design reference and recreates the experience as a real interactive web interface rather than a pre-rendered animation.
 
 ## Live Demo
 
-**https://terentakula.github.io/RitmStyle/**
-
-## Features
-
-* Responsive layout for desktop, tablet and mobile
-* Modern animated hero section
-* Smooth scroll-based animations
-* Interactive session cards
-* Animated testimonials slider
-* Mobile navigation menu
-* Booking modal with form validation
-* News and blog pages
-* Individual article pages
-* Responsive pricing and contact sections
-* Reduced-motion support
-* GitHub Pages deployment with GitHub Actions
-
-## Tech Stack
-
-* React
-* Vite
-* React Router
-* Motion / `motion/react`
-* CSS3
-* GitHub Actions
-* GitHub Pages
-
-## Getting Started
-
-Clone the repository:
-
-```bash
-git clone https://github.com/terentakula/RitmStyle.git
-```
-
-Open the project directory:
-
-```bash
-cd RitmStyle
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-## Production Build
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Project Structure
-
-```text
-src/
-├── assets/          # Images, icons and other static assets
-├── components/      # Shared UI components
-├── data/            # Sessions, prices, reviews and article content
-├── pages/           # Home, News, Blog and Article pages
-├── App.jsx          # Application routes and layout
-├── main.jsx         # React entry point
-└── styles.css       # Global styles and responsive layout
-```
-
-## Deployment
-
-The project is automatically deployed to GitHub Pages through GitHub Actions after changes are pushed to the `main` branch.
-
-Live version:
-
-**https://terentakula.github.io/RitmStyle/**
-
-## Note
-
-The booking interface is implemented on the frontend. It currently does not send booking data to a backend service.
-
-A backend API, email service, Telegram bot, Formspree or CRM can be connected later for production use.
+https://terentakula.github.io/pizza-slider/
 
 ## Repository
 
-https://github.com/terentakula/RitmStyle
+https://github.com/terentakula/pizza-slider
+
+## Features
+
+- Animated circular pizza carousel
+- Infinite next / previous navigation
+- Smooth Motion-based transitions
+- Animated pizza titles
+- Dynamic active item highlighting
+- Synchronized text and carousel animations
+- Responsive layout
+- Mobile adaptation
+- GitHub Pages deployment
+- Continuous UI and animation refinement
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Motion
+- CSS
+- GitHub Actions
+- GitHub Pages
+
+## Project Goal
+
+The goal of this project is to recreate a high-end motion design concept as a fully functional React interface.
+
+Instead of reproducing the original animation frame by frame, the carousel is generated dynamically using:
+
+- React state
+- calculated circular positioning
+- rotation
+- scale
+- opacity
+- animated transitions
+
+This makes the interaction reusable, responsive and fully controlled by code.
+
+## How It Works
+
+Each pizza is positioned relative to the currently active item.
+
+Its position is calculated using circular geometry:
+
+```ts
+const x = Math.sin(radians) * ORBIT_RADIUS;
+const y = (1 - Math.cos(radians)) * ORBIT_RADIUS;
